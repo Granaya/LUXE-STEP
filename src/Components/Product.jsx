@@ -14,7 +14,7 @@ const Product = () => {
 
     setTimeout(() => {
       setAddedProductId(null);
-    }, 3000); // hide after 3s
+    }, 3000); 
   };
 
   return (
@@ -35,7 +35,7 @@ const Product = () => {
                 animationFillMode: "forwards",
               }}
             >
-              {/* Image with Hover Buttons */}
+             
               <div className="relative overflow-hidden rounded-xl">
                 <img
                   src={image}
@@ -61,7 +61,7 @@ const Product = () => {
                 </div>
               </div>
 
-              {/* Product Info */}
+              
               <div className="mt-5">
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
                   {title}
@@ -70,7 +70,6 @@ const Product = () => {
                   ${price}
                 </p>
 
-                {/* Message with fade-in */}
                 {addedProductId === id && (
                   <p className="mt-2 text-blue-600 bg-blue-100 rounded px-3 py-2 text-sm font-medium transition-opacity duration-500 ease-in-out animate-fade-in">
                     {title} added to cart!
