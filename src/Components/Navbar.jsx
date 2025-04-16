@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { BiSearch, BiUser, BiMenu } from 'react-icons/bi';
-import { FiShoppingBag, FiPhoneCall, FiInfo } from 'react-icons/fi'; // New icons
+import { BiSearch, BiUser, BiMenu, BiCartAdd } from 'react-icons/bi';  // Import BiCartAdd
+import { FiPhoneCall, FiInfo, FiShoppingBag } from 'react-icons/fi';  // Add FiShoppingBag import
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../Context/ShopContext';
 
@@ -57,9 +57,14 @@ const Navbar = () => {
             <FiInfo className="text-2xl sm:text-3xl" />
           </Link>
 
-          {/* Cart Icon */}
+          {/* Shop Icon (Links to Shop page) */}
           <Link to="/shop" className="relative">
             <FiShoppingBag className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
+          </Link>
+
+          {/* Cart Icon (Links to Cart page) */}
+          <Link to="/cart" className="relative">
+            <BiCartAdd className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
             {quantity > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full">
                 {quantity}
