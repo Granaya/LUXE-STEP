@@ -8,82 +8,85 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic
     console.log('Message Sent:', { name, email, message });
   };
 
   return (
-    <div className="py-16 px-4 sm:px-8 bg-gray-100">
-      <div className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-semibold text-center mb-6">CONTACT LUXE STEP</h2>
-        <p className="text-center mb-8 text-gray-600">Got a question? We are here to help!</p>
-        
-        <form onSubmit={handleSubmit}>
-          {/* Name Field */}
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 text-sm font-medium mb-2">
-              Your Name
+    <div className="bg-gradient-to-r from-[#e0f7ff] to-[#ffffff] py-20 px-4 sm:px-8">
+      <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl p-10">
+        <h2 className="text-4xl font-extrabold text-center text-blue-700 mb-4">
+          Contact Luxe Step
+        </h2>
+        <p className="text-center text-gray-500 mb-8">
+          We're always happy to help. Drop us a message or call us directly!
+        </p>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name */}
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              Full Name
             </label>
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Your Name"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
+              placeholder="Kwesi Grant"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
 
-          {/* Email Field */}
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">
-              Your Email
+          {/* Email */}
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              Email Address
             </label>
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Your Email"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
+              placeholder="grant@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
 
-          {/* Message Field */}
-          <div className="mb-6">
-            <label htmlFor="message" className="block text-gray-700 text-sm font-medium mb-2">
+          {/* Message */}
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
               Message
             </label>
             <textarea
               id="message"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Write your message here..."
               rows="4"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm shadow-sm focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
+              placeholder="Write your message here..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
             />
           </div>
 
-          {/* Submit Button */}
+          {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 focus:outline-none"
+            className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition duration-300"
           >
             Send Message
           </button>
         </form>
 
-        {/* Phone Number Section */}
-        <div className="mt-8 text-center">
-          <p className="text-lg text-gray-700">Call us directly:</p>
+        {/* Contact Number */}
+        <div className="mt-10 text-center">
+          <p className="text-gray-600 text-sm">Prefer to call?</p>
           <a
             href="tel:+0507338842"
-            className="flex items-center justify-center text-blue-500 text-xl mt-2"
+            className="inline-flex items-center justify-center text-blue-600 text-lg font-semibold mt-2 hover:underline"
           >
-            <BiPhone className="mr-2" />
+            <BiPhone className="mr-2 text-xl" />
             0507338842
           </a>
         </div>
