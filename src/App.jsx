@@ -6,7 +6,7 @@ import ProductDetails from './pages/ProductDetails'
 import Cart from './pages/Cart/Cart'
 import Footer from './Components/Footer'
 import ContactUs from './pages/ContactUs';
-import Shop from './pages/shop';
+import Shop from './pages/Shop';
 
 const App = () => {
   return (
