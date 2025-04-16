@@ -14,6 +14,18 @@ const ProductDetails = () => {
   // Find the product by ID
   const product = productsData.find((product) => product.id === parseInt(id));
 
+  // If the product is not found, show an error message
+  if (!product) {
+    return (
+      <div className="text-center py-20">
+        <h2 className="text-2xl font-bold text-red-500">Product Not Found</h2>
+        <p className="mt-4 text-lg text-gray-600">
+          We couldn't find the product you were looking for.
+        </p>
+      </div>
+    );
+  }
+
   // Handle add to cart and show message
   const handleAddToCart = () => {
     addToCart(product, id);
@@ -30,7 +42,11 @@ const ProductDetails = () => {
       <div className="flex flex-col lg:flex-row justify-between items-center">
         {/* Product Image */}
         <div className="flex-shrink-0 mb-6 lg:mb-0">
-          <img src={product.image} alt={product.title} className="w-full max-w-[460px] h-auto" />
+          <img
+            src={product.image}
+            alt={product.title}
+            className="w-full max-w-[460px] h-auto"
+          />
         </div>
 
         {/* Product Info */}

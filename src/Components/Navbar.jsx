@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { BiCart, BiSearch, BiUser, BiMenu } from 'react-icons/bi';
+import { BiSearch, BiUser, BiMenu } from 'react-icons/bi';
+import { FiShoppingBag, FiPhoneCall, FiInfo } from 'react-icons/fi'; // New icons
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../Context/ShopContext';
 
@@ -44,15 +45,30 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Cart and User Icons */}
+        {/* Grouped Icons between the Search and Cart */}
         <div className="flex items-center space-x-6">
-          <Link to="/cart" className="relative">
-            <BiCart className="text-2xl sm:text-3xl text-white" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full">
-              {quantity}
-            </span>
+          {/* Contact Icon */}
+          <Link to="/contact" className="text-white hover:text-gray-200 transition duration-300">
+            <FiPhoneCall className="text-2xl sm:text-3xl" />
           </Link>
-          <BiUser className="text-2xl sm:text-3xl text-white" />
+
+          {/* About Us Icon */}
+          <Link to="/about-us" className="text-white hover:text-gray-200 transition duration-300">
+            <FiInfo className="text-2xl sm:text-3xl" />
+          </Link>
+
+          {/* Cart Icon */}
+          <Link to="/shop" className="relative">
+            <FiShoppingBag className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
+            {quantity > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full">
+                {quantity}
+              </span>
+            )}
+          </Link>
+
+          {/* User Icon */}
+          <BiUser className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
         </div>
       </div>
     </div>
