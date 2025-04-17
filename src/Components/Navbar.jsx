@@ -57,12 +57,12 @@ const Navbar = () => {
             <FiInfo className="text-2xl sm:text-3xl" />
           </Link>
 
-          {/* Shop Icon (Links to Shop page) */}
+          {/* Shop Icon */}
           <Link to="/shop" className="relative">
             <FiShoppingBag className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
           </Link>
 
-          {/* Cart Icon (Links to Cart page) */}
+          {/* Cart Icon */}
           <Link to="/cart" className="relative">
             <BiCartAdd className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
             {quantity > 0 && (
@@ -72,8 +72,10 @@ const Navbar = () => {
             )}
           </Link>
 
-          {/* User Icon */}
-          <BiUser className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
+          {/* User Icon with Link */}
+          <Link to="/user" className="text-white hover:text-gray-200 transition duration-300">
+            <BiUser className="text-2xl sm:text-3xl" />
+          </Link>
         </div>
       </div>
     </div>

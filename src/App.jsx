@@ -7,6 +7,8 @@ import Cart from './pages/Cart/Cart'
 import Footer from './Components/Footer'
 import ContactUs from './pages/ContactUs';
 import Shop from './pages/Shop';
+import AboutUs from './pages/AboutUs';
+import User from './components/User';
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path='/cart' element={<Cart />} />
         <Route path='/contact' element={<ContactUs />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/user" element={<User />} /> 
       </Routes>
       <Footer/>
     </div>
