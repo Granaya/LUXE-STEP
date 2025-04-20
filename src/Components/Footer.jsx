@@ -1,6 +1,5 @@
 import React from 'react';
 import { BsInstagram, BsTwitterX } from 'react-icons/bs';
-import { FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -9,12 +8,28 @@ const Footer = () => {
         <div className="text-2xl font-bold">
           <h2>LUXE STEP</h2>
         </div>
+
         <div className="flex space-x-4">
-          <FaFacebook className="text-xl cursor-pointer hover:text-gray-400" />
-          <BsInstagram className="text-xl cursor-pointer hover:text-gray-400" />
-          <BsTwitterX className="text-xl cursor-pointer hover:text-gray-400" />
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/cal.grant_/#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsInstagram className="text-xl cursor-pointer hover:text-gray-400" />
+          </a>
+
+          {/* Twitter (X) */}
+          <a
+            href="https://x.com/grant_lly"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsTwitterX className="text-xl cursor-pointer hover:text-gray-400" />
+          </a>
         </div>
       </div>
+
       <div className="text-center py-4">
         <p>Copyright © LUXE STEP 2024. All rights reserved</p>
       </div>
