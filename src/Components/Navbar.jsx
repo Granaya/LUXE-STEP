@@ -31,50 +31,55 @@ const Navbar = () => {
 
       {/* Search + Icons */}
       <div
-        className={`w-full sm:w-auto mt-4 sm:mt-0 ${menuOpen ? 'block' : 'hidden'} sm:flex sm:items-center sm:space-x-6`}
+        className={`w-full sm:w-auto mt-4 sm:mt-0 ${menuOpen ? 'block' : 'hidden'} sm:flex sm:items-center sm:space-x-6 justify-center`}
       >
         {/* Search Input */}
-        <div className="relative flex items-center mb-4 sm:mb-0">
-          <BiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-xl text-gray-500" />
+        <div className="relative flex items-center mb-4 sm:mb-0 w-full sm:w-[400px] md:w-[500px]">
+          <BiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-lg text-gray-500" />
           <input
             type="text"
             value={query}
             onChange={handleSearch}
             placeholder="Search for products..."
-            className="pl-12 pr-10 py-2 sm:py-3 w-full sm:w-[300px] rounded-full border-2 border-white bg-white focus:outline-none"
+            className="pl-12 pr-10 py-2 sm:py-3 w-full rounded-full border-2 border-white bg-white focus:outline-none"
           />
         </div>
 
         {/* Grouped Icons between the Search and Cart */}
         <div className="flex items-center space-x-6">
-          {/* Contact Icon */}
-          <Link to="/contact" className="text-white hover:text-gray-200 transition duration-300">
-            <FiPhoneCall className="text-2xl sm:text-3xl" />
+          {/* Contact Icon with Text */}
+          <Link to="/contact" className="text-white hover:text-gray-200 transition duration-300 flex items-center space-x-2">
+            <FiPhoneCall className="text-sm sm:text-base" />
+            <span className="hidden sm:block text-sm">Contact</span>
           </Link>
 
-          {/* About Us Icon */}
-          <Link to="/about-us" className="text-white hover:text-gray-200 transition duration-300">
-            <FiInfo className="text-2xl sm:text-3xl" />
+          {/* About Us Icon with Text */}
+          <Link to="/about-us" className="text-white hover:text-gray-200 transition duration-300 flex items-center space-x-2">
+            <FiInfo className="text-sm sm:text-base" />
+            <span className="hidden sm:block text-sm">About Us</span>
           </Link>
 
-          {/* Shop Icon */}
-          <Link to="/shop" className="relative">
-            <FiShoppingBag className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
+          {/* Shop Icon with Text */}
+          <Link to="/shop" className="text-white hover:text-gray-200 transition duration-300 flex items-center space-x-2">
+            <FiShoppingBag className="text-sm sm:text-base" />
+            <span className="hidden sm:block text-sm">Shop</span>
           </Link>
 
-          {/* Cart Icon */}
-          <Link to="/cart" className="relative">
-            <BiCartAdd className="text-2xl sm:text-3xl text-white hover:text-gray-200 transition duration-300" />
+          {/* Cart Icon with Quantity Badge on the Left */}
+          <Link to="/cart" className="relative text-white hover:text-gray-200 transition duration-300 flex items-center space-x-2">
             {quantity > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full">
+              <div className="absolute left-[-12px] -top-2 bg-red-500 text-white text-xs h-4 w-4 flex items-center justify-center rounded-full">
                 {quantity}
-              </span>
+              </div>
             )}
+            <BiCartAdd className="text-sm sm:text-base" />
+            <span className="hidden sm:block text-sm">Cart</span>
           </Link>
 
-          {/* User Icon with Link */}
-          <Link to="/user" className="text-white hover:text-gray-200 transition duration-300">
-            <BiUser className="text-2xl sm:text-3xl" />
+          {/* User Icon with Text */}
+          <Link to="/user" className="text-white hover:text-gray-200 transition duration-300 flex items-center space-x-2">
+            <BiUser className="text-sm sm:text-base" />
+            <span className="hidden sm:block text-sm">Account</span>
           </Link>
         </div>
       </div>
