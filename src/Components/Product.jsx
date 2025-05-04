@@ -13,7 +13,7 @@ const Product = () => {
 
   // Titles for each row (you can customize them as needed)
   const rowTitles = [
-    "Top Sold Items",
+    "Top Sold Sneakers",
     "New Arrivals",
     "Best Performance Sneakers",
   ];
